@@ -31,7 +31,7 @@ export class SignupPage {
     await expect(this.errorMessage).toContainText('Please enter a username and password.');
   }
   async verifyFailedLogin() {
-    await expect(this.errorMessage).toContainText('An internal error has occurred and has been logged.');
+    await expect(this.errorMessage).toContainText('The username and password could not be verified.');
   }
  
 }
