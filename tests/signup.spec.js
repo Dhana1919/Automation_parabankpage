@@ -11,6 +11,14 @@ test.describe('Sign-up and verify amount flow', () => {
         // Write all test results after suite finishes
         saveResultsToExcel(results);
       });
+      test.beforeAll(async () => {
+         // Launch the browser
+  const browser = await chromium.launch({ headless: false });
+  // Create a new context (isolated browser session)
+  const context = await browser.newContext();
+  // Open a new page inside the context
+  const page = await context.newPage();
+      });
 test('valid User login to the website', async ({ page }) => {
     const signupPage = new SignupPage(page);
     const dashboardPage = new DashboardPage(page);
